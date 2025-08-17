@@ -42,10 +42,21 @@ def prodact():
     conn.commit()
     cur.close()
     conn.close()
+ 
+def calcu():
+    config={"user":"root","host":"localhost","password":"belive_god1527","database":"pro"}
+    conn=connection.MySQLConnection(**config)
+    cur=conn.cursor()
+    cur.execute("""create table calu(
+                user_id int ,
+                last_seen_cal datetime defaultt timestamp
+
+    )""")
 
 if __name__=="__main__":
     database="pro"
     database_exist(database)
     uus()
     prodact()
+    calcu()
     
