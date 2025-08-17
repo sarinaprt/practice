@@ -1,6 +1,6 @@
 import re
 import os
-
+import jjj
 
 if not os.path.exists("username.txt"):
     with open("username.txt","w",encoding="utf-8")as f:
@@ -40,7 +40,9 @@ if id:
     if password_find==password:
         chose=input(("you can choose : if you need to use calculator enter 1 if you need to write something in your note enter 2 if you wanna know about your id enter 3"))
         if chose=="1":
-            pass
+            jjj.calculator()
+            
+
 
 else:
     pass

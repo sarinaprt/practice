@@ -19,10 +19,12 @@ def uus():
     cur.execute(""" create table sarina(
                     sarina_name varchar(50) not null,
                     saina_id    int  auto_increment primary key,
+                    email       nvarchar(70) not null unique,
                     creadit     char(11) not null,
                     passord    nvarchar(11), 
                     note         text,
-                    creat       datetime default current_timestamp
+                    creat       datetime default current_timestamp on update current_timestamp,
+                    constaint email_fram  check(email like "_%@_%_%")
     )""")
     conn.commit()
     cur.close()
@@ -49,7 +51,7 @@ def calcu():
     cur=conn.cursor()
     cur.execute("""create table calu(
                 user_id int ,
-                last_seen_cal datetime defaultt timestamp
+                last_seen_cal datetime defaultt current_timestamp on update current_timestamp
 
     )""")
 
