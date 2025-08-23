@@ -43,8 +43,7 @@ def calender_ac():
             with open("note.txt","w",encoding="utf-8")as f :
                 f.writelines(other_lin)
             with open("note.txt","a",encoding="utf-8")as f:
-                f.writelines(f"-{date}:{new_note}")
- 
+                f.write(f"-{date}:{new_note}")
 
     def type_tim(event):
         if entr.get(1.0,END).strip()=="enter your daliy rotin":
@@ -64,7 +63,7 @@ def calender_ac():
                 break
         else:
             with open("note.txt","a",encoding="utf-8")as f:
-                f.writelines(f"-{date}:{writ}")
+                f.write(f"-{date}:{writ}")
 
 
 
