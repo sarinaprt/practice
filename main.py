@@ -24,7 +24,7 @@ def id_play(id):
             sound=AudioSegment.from_file(file_path).speedup(2)+20
             playback.play(sound)
     else:
-        tens=int(id)//10
+        tens=(int(id)//10)*10
         unit=int(id)%10
         list_sound=[]
         if int(id)>20 and int(unit)!=0:
